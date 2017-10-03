@@ -10,7 +10,7 @@
  * Click top-right icon on website and choose setting
  * Select API, you will be able to find your User ID and API token
 
-1. Use quick-create-todo.html
+2. Use quick-create-todo.html
  * Click [https://github.com/deqing/habitica/blob/master/quick-create-todo.html](https://github.com/deqing/habitica/blob/master/quick-create-todo.html) to open the html file
  * Click `Raw` button at top-right
  * Select all text, copy and save to a local text file
