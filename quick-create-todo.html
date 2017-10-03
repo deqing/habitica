@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+body {
+    font-family: verdana;
+    font-size: 12px;
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    $('#taskname').keypress(function(e) {
+        var key = e.which;
+        if (key == 13) {
+            var values = {
+                "type": "todo",
+                "text": $('#taskname').val(),
+                'tags': []
+            };
+            
+            if ($("#office").is(':checked')) { values['tags'].push('0ed942f8-5483-4420-bf26-xxxx'); };
+            if ($("#home").is(':checked')) { values['tags'].push('825c687d-928d-4238-b649-xxxx'); };
+            if ($("#mobile").is(':checked')) { values['tags'].push('cde90dd7-c4e7-4803-9e99-xxxx'); };
+            
+            $.ajax({
+                url: 'https://habitica.com/api/v3/tasks/user',
+                type: 'post',
+                headers: {
+                    "x-api-user": 'PLEASE REPLACE THIS WITH YOUR X-API-USER STRING, e.g. ccba770f-b79b-4fb6-8694-xxxx',
+                    "x-api-key": 'PLEASE REPLACE THIS WITH YOUR X-API-KEY STRING, e.g. 0b4fd0bc-1af1-48af-813f-xxxx'
+                },
+                data: values,
+                dataType: 'json',
+                success: function (data) {
+                    console.info(data);
+                    $('#result').text('Todo [' + data.data.text + '] is created.');
+                }
+            });
+            $('#taskname').val('');
+        }
+    });
+});
+</script>
+
+<!-- You can specify some tags that are frequently used in your todos --->
+<input type="checkbox" id="office" checked>Office
+<input type="checkbox" id="home" >Home
+<input type="checkbox" id="mobile" >Mobile<p>
+<input type="text" id="taskname" size='50' autofocus />
+<p id="result"></p>
+</body>
+</html>

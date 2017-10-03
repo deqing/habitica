@@ -1,0 +1,5 @@
+.reward { display: none !important; }
+.col-lg-3 {
+    max-width: 33vw !important;
+    flex: 0 0 33% !important;
+}

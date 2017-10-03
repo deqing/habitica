@@ -1,0 +1,8 @@
+ol, ul, dl { margin: 0px !important; }
+
+/*
+Following two lines remove icons and checklist, making the height of each list item even smaller
+
+.icons { display: none !important; }
+.checklist { display: none !important; }
+*/
