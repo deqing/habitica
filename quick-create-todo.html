@@ -21,9 +21,9 @@ $(document).ready(function(){
                 'tags': []
             };
             
-            if ($("#office").is(':checked')) { values['tags'].push('0ed942f8-5483-4420-bf26-xxxx'); };
-            if ($("#home").is(':checked')) { values['tags'].push('825c687d-928d-4238-b649-xxxx'); };
-            if ($("#mobile").is(':checked')) { values['tags'].push('cde90dd7-c4e7-4803-9e99-xxxx'); };
+            if ($("#office").is(':checked')) { values['tags'].push('0ed942f8-5483-4420-bf26-****'); };
+            if ($("#home").is(':checked')) { values['tags'].push('825c687d-928d-4238-b649-****'); };
+            if ($("#mobile").is(':checked')) { values['tags'].push('cde90dd7-c4e7-4803-9e99-****'); };
             
             $.ajax({
                 url: 'https://habitica.com/api/v3/tasks/user',
@@ -45,8 +45,8 @@ $(document).ready(function(){
 });
 </script>
 
-<!-- You can specify some tags that are frequently used in your todos --->
-<input type="checkbox" id="office" checked>Office
+<!-- You can specify some tags that are frequently used in your todos -->
+<input type="checkbox" id="office">Office
 <input type="checkbox" id="home" >Home
 <input type="checkbox" id="mobile" >Mobile<p>
 <input type="text" id="taskname" size='50' autofocus />
